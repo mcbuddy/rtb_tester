@@ -18,23 +18,12 @@ class Request
   field :bcat, type: Array
   field :badv, type: Array
 
-  embeds_one :impression
-  embeds_one :site
-  embeds_one :app
-  embeds_one :device
-  embeds_one :user
-  embeds_one :regs
-  embeds_one :ext
-
-
-  # before_save :set_imp
-
-
-  def set_imp
-    Impression.create
-  end
-
-
-
+  field :impression, type: Hash
+  field :site, type: Hash
+  field :app, type: Hash
+  field :device, type: Hash
+  field :user, type: Hash
+  field :regs, type: Hash
+  field :ext, type: Hash
 
 end

@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/rails/protected_attributes.git
-  revision: 7eec0fa78fdfb476cb95bc3622ea285d9d6a811c
-  specs:
-    protected_attributes (1.1.3)
-      activemodel (>= 4.0.1, < 5.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -18,7 +11,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     backports (3.6.8)
-    bcrypt (3.1.11)
     bson (4.1.1)
     bson_ext (1.5.1)
     builder (3.2.2)
@@ -30,12 +22,12 @@ GEM
     eventmachine (1.2.0.1)
     factory_girl (4.7.0)
       activesupport (>= 3.0.0)
+    haml (4.0.7)
+      tilt
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
     json (1.8.3)
-    mail (2.6.4)
-      mime-types (>= 1.16, < 4)
     mime-types (2.99.1)
     minitest (5.9.0)
     mongo (2.2.5)
@@ -50,8 +42,6 @@ GEM
     multi_json (1.12.1)
     netrc (0.11.0)
     origin (2.2.0)
-    pony (1.11)
-      mail (>= 2.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -85,8 +75,7 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (>= 1.3, < 3)
-    sinatra-param (1.4.0)
-      sinatra (~> 1.3)
+    sinatra-twitter-bootstrap (2.3.4)
     thin (1.6.4)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -103,21 +92,19 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt
   bson_ext
   database_cleaner
   factory_girl
+  haml
   json
   mongoid (~> 5.0.0)
   mongoid-autoinc
   multi_json
-  pony
-  protected_attributes!
   rest-client
   rspec
   sinatra
   sinatra-contrib
-  sinatra-param
+  sinatra-twitter-bootstrap
   thin
 
 BUNDLED WITH

@@ -2,13 +2,12 @@ require 'rubygems'
 require 'bundler'
 require 'securerandom'
 require 'sinatra/namespace'
+require 'haml'
 Bundler.require(:default)
 
-# Load the user model
-require_relative 'model/request'
-require_relative 'model/impression'
-require_relative 'model/video'
-
+# Load the user models
+require_relative 'models/request'
+register Sinatra::Twitter::Bootstrap::Assets
 
 # Configure the mongo client
 configure do
@@ -25,6 +24,7 @@ get '/' do
   File.read(File.join('public', 'index.html'))
 end
 
-namespace '/rtb' do
+get '/request' do
+  haml :request
 
 end
