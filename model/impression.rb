@@ -3,6 +3,7 @@ class Impression
   include Mongoid::Document
 
   field :id, type: String
+  field :type, type: String
   field :displaymanager , type: String
   field :displaymanagerver , type: String
   field :instl, type: Integer, default: 0

@@ -36,7 +36,7 @@ GEM
     json (1.8.3)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    mime-types (2.99.1)
+    mime-types (2.99.2)
     minitest (5.9.0)
     mongo (2.2.5)
       bson (~> 4.0)

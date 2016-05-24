@@ -5,9 +5,10 @@ require 'sinatra/namespace'
 Bundler.require(:default)
 
 # Load the user model
-require_relative 'model/request'
-require_relative 'model/impression'
-require_relative 'model/video'
+Dir["model/*.rb"].each {|file| require_relative file }
+# require_relative 'model/**'
+# require_relative 'model/impression'
+# require_relative 'model/video'
 
 
 # Configure the mongo client
