@@ -2,9 +2,6 @@
 class Banner
   include Mongoid::Document
 
-  field :width, type:
-
-
-
+  field :width, type: String
 
 end

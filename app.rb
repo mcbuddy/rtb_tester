@@ -3,11 +3,13 @@ require 'bundler'
 require 'securerandom'
 require 'sinatra/namespace'
 require 'haml'
+require 'json'
 Bundler.require(:default)
 
 # Load the user models
-require_relative 'models/request'
-register Sinatra::Twitter::Bootstrap::Assets
+require_relative 'models/builder'
+# require_relative 'models/request'
+# register Sinatra::Twitter::Bootstrap::Assets
 
 # Configure the mongo client
 configure do
@@ -21,10 +23,23 @@ end
 
 # the routes
 get '/' do
-  File.read(File.join('public', 'index.html'))
+  haml :home
+end
+
+get '/builder' do
+  haml :builder
+end
+
+post '/review' do
+  @builder = params['builder']
+  @payload = params['payload'].to_json
+  haml :review
 end
 
 get '/request' do
   haml :request
+end
+
+post '/request' do
 
 end

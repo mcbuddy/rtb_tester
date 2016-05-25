@@ -1,0 +1,103 @@
+
+%form{:id => 'builder_form', :action => '/review', :method => 'post'}
+  %fieldset
+    %table
+      %tbody
+        %tr
+          %td
+            %label{:for => 'builder[url]'} Bidder URL:
+          %td
+            %input{:type => 'text', :name => 'builder[url]', :class => 'text'}
+        %tr
+          %td
+            %label{:for => 'builder[version]'} Bidder RTB Version:
+          %td
+            %select{:name => 'builder[version]', id: 'builder_version'}
+              %option{:selected => 'selected', value: 'x-openrtb-version: 2.2' } Version: 2.2
+              %option{:select => 'select', value: 'x-openrtb-version: 2.3' } Version: 2.3
+              %option{:select => 'select',value: 'x-openrtb-version: 2.4' } Version: 2.4
+        %tr
+          %td
+            %label{:for => 'builder[exchange]'} Exchange:
+          %td
+            %select{:name => 'builder[exchange]', id: 'exchange'}
+              %option{:selected => 'select', value: '8000/nexage' } Nexage
+              %option{:select => 'select', value: '8001/mopub' } MOPUB
+              %option{:select => 'select', value: '8002/openx' } OpenX
+              %option{:select => 'select', value: '8003/rubicon' } Rubicon
+              %option{:select => 'select', value: '8004/liverail' } LiveRail
+              %option{:select => 'select', value: '8005/adx' } AdX
+              %option{:select => 'select', value: '8006/spotx' } SpotX
+              %option{:select => 'select', value: '8007/brx' } BrightRoll
+              %option{:select => 'select', value: '8008/pubmatic' } PubMatic
+              %option{:select => 'select', value: '8009/torrential' } Torrential
+        %tr
+          %td== ---------------------
+        %tr
+          %td
+            %label{:for => 'payload[id]'} Bid Request ID:
+          %td
+            %input{:type => 'text', :name => 'payload[id]', :class => 'text'}
+        %tr
+          %td
+            %label{:for => 'payload[test]'} Test:
+          %td
+            %input{:name => 'payload[test]', value: 1, type: 'radio'}
+            %label{:for => 'payload[test]'} YES
+          %td
+            %input{:name => 'payload[test]', value: 0, type: 'radio', checked: true}
+            %label{:for => 'payload[test]'} NO
+        %tr
+          %td
+            %label{:for => 'payload[at]'} Action Type:
+          %td
+            %input{:name => 'payload[at]', value: 1, type: 'radio'}
+            %label{:for => 'payload[at]'} First Price
+          %td
+            %input{:name => 'payload[at]', value: 2, type: 'radio', checked: true}
+            %label{:for => 'payload[at]'} Second Price
+        %tr
+          %td
+            %label{:for => 'payload[tmax]'} Maximum Timeout:
+          %td
+            %input{:type => 'text', :name => 'payload[tmax]', :class => 'text'}
+        %tr
+          %td
+            %label{:for => 'payload[wset]'} Whitelist of buyer seat:
+          %td
+            %input{:type => 'text', :name => 'payload[wset]', :class => 'text'}
+        %tr
+          %td
+            %label{:for => 'payload[allimp]'} All Impression available:
+          %td
+            %input{:name => 'payload[allimp]', value: 1, type: 'radio'}
+            %label{:for => 'payload[allimp]'} YES
+          %td
+            %input{:name => 'payload[allimp]', value: 0, type: 'radio', checked: true}
+            %label{:for => 'payload[allimp]'} NO or Unknown
+        %tr
+          %td
+            %label{:for => 'payload[cur]'} Currency:
+          %td
+            %input{:type => 'text', :name => 'payload[cur]', :class => 'text', value: 'USD'}
+        %tr
+          %td
+            %label{:for => 'payload[bcat]'} Blocked Advertiser using IAB content categories:
+          %td
+            %input{:type => 'text', :name => 'payload[bcat]', :class => 'text'}
+        %tr
+          %td
+            %label{:for => 'payload[badv]'} Blocked Advertiser using domain:
+          %td
+            %input{:type => 'text', :name => 'payload[badv]', :class => 'text'}
+        %tr
+          %td
+            %label{:for => 'payload[regs]'} Regulation:
+          %td
+            %input{:type => 'text', :name => 'payload[regs]', :class => 'text'}
+        %tr
+          %td
+            %label{:for => 'payload[ext]'} Exchange specific extension:
+          %td
+            %input{:type => 'text', :name => 'payload[ext]', :class => 'text'}
+    %input{:type => 'submit', :value => 'Build'}

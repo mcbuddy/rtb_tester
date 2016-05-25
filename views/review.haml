@@ -1,0 +1,6 @@
+
+%ol
+  Here is your bid request, please open ypur terminal then copy - paste this code
+  %fieldset
+    %p
+      == curl -i -X POST -H "Content-Type: application/json" -H "#{@builder['version']}" -d'#{@payload}' #{@builder['url']}:#{@builder['exchange']}/bid -v
